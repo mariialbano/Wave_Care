@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import '../CSS/bootstrap.min.css'; /* Importando o Bootstrap */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Barlow, sans-serif;
+}
+
+/* Body with beige background and background image */
+body {
+    background-color: #f5f5dc;
+    color: #000;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('Fundo wavecare.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+
+/* Header/logo alignment and color */
+header, .header {
+    display: flex;
+    justify-content: flex-start; /* Align items to the left */
+    align-items: center;         /* Center logo vertically */
+    padding: 20px 40px 0 40px;
+    background-color: #f5f5dc; /* Beige background */
+    height: 100px;
+}
+
+
+.logo {
+    height: 80px;
+    max-height: 100%;
+    margin-left: 0;
+    padding-left: 50px;
+    display: flex;
+}
+
+
+/* Removendo o fundo branco da section */
+section.container-fluid {
+    background: transparent !important;
+}
+
+
+.main-content, main, .content, .texto {
+    text-align: left;
+    padding: 40px;
+    background: transparent !important;
+}
+
+.h2 {
+    font-size: 5em;
+    color: #000;
+    margin-bottom: 20px;
+}
+/* Button estilizando */
+.btn {
+    background-color: orange !important;
+    color: #fff;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 15px !important;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+/* Caixa laranja translúcida para o <p> */
+.texto p {
+    background: rgba(255, 165, 0, 0.2); /* laranja com transparência */
+    padding: 24px 28px;
+    border-radius: 16px;
+    color: #000;
+    font-size: 1.1em;
+    margin-top: 18px;
+    margin-bottom: 18px;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,0.04);
+}
+
+
+/* Button hover efeito */
+button:hover, .btn:hover, input[type="submit"]:hover {
+    background-color: #ff9800;
+}
+
+/* Estilizando o footer*/
+footer.footer {
+    background-color: #f5f5dc;
+    color: #000;
+    text-align: center;
+    padding: 15px 10px;
+    font-size: 14px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+/* Responsividade para header, logo e textos principais */
+@media (max-width: 1200px) {
+    header {
+        padding: 20px 30px 0 30px;
+    }
+    .logo {
+        height: 70px;
+        padding-left: 30px;
+    }
+    .container .texto {
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 992px) {
+    section {
+        padding: 80px 30px;
+    }
+    header {
+        padding: 15px 20px 0 20px;
+    }
+    .logo {
+        height: 60px;
+        padding-left: 20px;
+    }
+    .container .texto {
+        max-width: 400px;
+    }
+    .container .texto h2 {
+        font-size: 1.2em;
+    }
+    .container .texto h2 span {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 60px 15px;
+    }
+    header {
+        padding: 10px 10px 0 10px;
+    }
+    .logo {
+        height: 50px;
+        padding-left: 10px;
+    }
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .container .texto {
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+    .container .texto h2 {
+        font-size: 1em;
+    }
+    .container .texto h2 span {
+        font-size: 1.3em;
+    }
+}
