@@ -1,28 +1,78 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Monitor de Calor</title>
+    <link rel="stylesheet" href="./css/dashboard.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
+
 <body>
     <header>
         <a href="index.html"><img src="./assets/logo.png" alt="logo" class="logo" /></a>
     </header>
 
-    <a href="dicas.html">Dicas</a>
+    <section class="weather-card">
+    <h3 class="mb-4 text-center">Monitor de Calor</h3>
+        <div class="mb-3">
+            <label for="estado" class="form-label">Selecione a Cidade:</label>
+            <select id="estado" class="form-select">
+                <option value="" disabled selected hidden>Selecione</option>   <!-- seletor de cidade-->
+                <option value="São Paulo">São Paulo</option>
+                <option value="Rio de Janeiro">Rio de Janeiro</option>
+                <option value="Belo Horizonte">Belo Horizonte</option>
+                <option value="Salvador">Salvador</option>
+                <option value="Fortaleza">Fortaleza</option>
+                <option value="Brasília">Brasília</option>
+                <option value="Curitiba">Curitiba</option>
+                <option value="Recife">Recife</option>
+                <option value="Porto Alegre">Porto Alegre</option>
+                <option value="Manaus">Manaus</option>
+            </select>
+        </div>
+
+        <div class="my-4 d-flex align-items-center">
+            <div>
+                <img src="./assets/Icone Localização.png" alt="Localização" class="weather-icon" />
+                <span id="cidade" class="fs-5">São Paulo</span>                                         <!--cidade atual-->
+            </div>
+            <div>
+                <p class="mb-1 ms-3 fs-5"> <span id="data">Sexta, 30 de Maio</span></p>                 <!--data atual-->
+            </div> 
+        </div>
+
+        <div class="mb-3 d-flex justify-content-around align-items-center">
+        <div class="text-center">
+            <p class="mb-1 fw-semibold">Temperatura</p>
+            <p class="fs-3 text-primary" id="temperatura">31°C</p>
+        </div>
+        <div class="text-center">
+            <p class="mb-1 fw-semibold">Sensação Térmica</p>
+            <p class="fs-3 text-warning" id="sensacao">35°C</p>
+        </div>
+        <div class="text-center">
+            <p class="mb-1 fw-semibold">Condição</p>
+            <p class="fs-3 text-success" id="condicao">Ensolarado</p>
+        </div>
+        </div>
+
+        <div id="alerta" class="alert alert-warning alerta d-flex align-items-center" role="alert">
+        <span class="me-2">⚠</span>
+        <div>Índice UV muito alto hoje!</div>
+        </div>
+
+        <p class="text-center fst-italic">Cuide-se! Sua saúde vem em primeiro lugar.</p>
+
+        <a href="dicas.html" class="btn btn-dicas w-100 btn-warning     ">Dicas</a>
+    </section>
 
     <!-- Footer -->
     <footer class="footer text-black text-center">
         <p>© 2025 Wave Care. Todos os direitos reservados.</p>
         <p>Desenvolvido por: Ana Gonçalves, Jessica Brito, Mariana Albano, Neemias Silva, Vinícius Gonzales.</p>
     </footer>
-
-    <!-- Bootstrap JS -->
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
