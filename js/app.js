@@ -1,5 +1,4 @@
-const apiKey = '9f93b4fa9aa9d8aa799a6af275de422f
-';
+const apiKey = '9f93b4fa9aa9d8aa799a6af275de422f';
 
 document.getElementById('buscarBtn').addEventListener('click', () => {
   const cidade = document.getElementById('cidadeInput').value.trim();
