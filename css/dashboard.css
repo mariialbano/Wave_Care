@@ -66,6 +66,7 @@ header {
     margin: 5px 0;
 }
 
+
 @media (max-width: 480px) {
     .weather-card {
         margin: 50px auto;

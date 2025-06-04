@@ -19,7 +19,7 @@
         <div class="mb-3">
             <label for="estado" class="form-label">Selecione a Cidade:</label>
             <select id="estado" class="form-select">
-                <option value="" disabled selected hidden>Selecione</option> <!-- seletor de cidade-->
+                <option value="" disabled selected hidden>Selecione</option>
                 <option value="São Paulo">São Paulo</option>
                 <option value="Rio de Janeiro">Rio de Janeiro</option>
                 <option value="Belo Horizonte">Belo Horizonte</option>
@@ -36,32 +36,29 @@
         <div class="my-4 d-flex align-items-center">
             <div>
                 <img src="./assets/Icone Localização.png" alt="Localização" class="weather-icon" />
-                <span id="cidade" class="fs-5">São Paulo</span> <!--cidade atual-->
+                <span id="cidade" class="fs-5">São Paulo</span>
             </div>
             <div>
-                <p class="mb-1 ms-3 fs-5"> <span id="data">Sexta, 30 de Maio</span></p> <!--data atual-->
+                <p class="mb-1 ms-3 fs-5"><span id="data">Sexta, 30 de Maio</span></p>
             </div>
         </div>
 
         <div class="mb-3 d-flex justify-content-around align-items-center">
             <div class="text-center">
                 <p class="mb-1 fw-semibold">Temperatura</p>
-                <p class="fs-3 text-primary" id="temperatura">31°C</p>
+                <p class="fs-3 text-primary" id="temperatura">--</p>
             </div>
             <div class="text-center">
                 <p class="mb-1 fw-semibold">Sensação Térmica</p>
-                <p class="fs-3 text-warning" id="sensacao">35°C</p>
+                <p class="fs-3 text-warning" id="sensacao">--</p>
             </div>
             <div class="text-center">
                 <p class="mb-1 fw-semibold">Condição</p>
-                <p class="fs-3 text-success" id="condicao">Ensolarado</p>
+                <p class="fs-3 text-success" id="condicao">--</p>
             </div>
         </div>
 
-        <div id="alerta" class="alert alert-warning d-flex justify-content-center" role="alert">
-            <span class="me-2">⚠</span>
-            <div>Índice UV muito alto hoje!</div>
-        </div>
+        <div id="alerta" class="alert d-flex justify-content-center" role="alert" style="display: none;"></div>
 
         <p class="text-center fst-italic">Cuide-se! Sua saúde vem em primeiro lugar.</p>
 
