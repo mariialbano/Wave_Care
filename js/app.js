@@ -4,7 +4,8 @@ alertaDiv.style.display = 'none';
 
 const cidadeSelecionada = document.getElementById('estado');
 const cidadeTexto = document.getElementById('cidade');
-const dataTexto = document.getElementById('data');
+const diaSemanaTexto = document.getElementById('diaSemana');
+const diaMesTexto = document.getElementById('diaMes');
 const temperatura = document.getElementById('temperatura');
 const sensacao = document.getElementById('sensacao');
 const condicao = document.getElementById('condicao');
@@ -58,12 +59,17 @@ function verificarAlerta(feelsLike) {
 
 function atualizarData() {
     const hoje = new Date();
-    const opcoes = { weekday: 'long', day: 'numeric', month: 'long' };
-    const dataFormatada = hoje.toLocaleDateString('pt-BR', opcoes);
-    dataTexto.textContent = dataFormatada.charAt(0).toUpperCase() + dataFormatada.slice(1);
-}
 
-window.onload = () => {
-    cidadeSelecionada.value = 'São Paulo';
-    buscarDadosClima('São Paulo');
-};
+    const opcoesDiaSemana = { weekday: 'long' };
+    const opcoesDiaMes = { day: 'numeric', month: 'long' };
+
+    let diaSemana = hoje.toLocaleDateString('pt-BR', opcoesDiaSemana);
+    let diaMes = hoje.toLocaleDateString('pt-BR', opcoesDiaMes);
+
+    // Capitaliza a primeira letra
+    diaSemana = diaSemana.charAt(0).toUpperCase() + diaSemana.slice(1);
+    diaMes = diaMes.charAt(0).toUpperCase() + diaMes.slice(1);
+
+    diaSemanaTexto.textContent = diaSemana;
+    diaMesTexto.textContent = diaMes;
+}
