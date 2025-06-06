@@ -2,7 +2,16 @@
 @import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css');
 @import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css');
 
-/* CSS Geral (presente em todas as páginas) */
+/* ===========================
+CSS GERAL (styles.css + dashboard)
+   =========================== */
+
+/* Reset e base */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -11,50 +20,145 @@
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    font-family: Barlow, sans-serif;
     background-color: #f5f5dc;
     color: #000;
-    margin: 0;
-    font-family: Arial, sans-serif;
     background-image: url('../assets/fundo.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-header, .header {
+/* Header e logo */
+header,
+.header {
     display: flex;
-    justify-content: flex-start; 
-    align-items: center;        
+    justify-content: flex-start;
+    align-items: center;
     padding: 20px 40px 0 40px;
-    background-color: #f5f5dc; 
+    background-color: #f5f5dc;
     height: 100px;
 }
 
 .logo {
-    height: 150px; 
+    height: 150px;
     max-height: 100%;
-    padding-left: 60px; 
+    padding-left: 60px;
     display: block;
+    transition: height 0.3s ease;
 }
 
-footer.footer {
-    background-color: #f5f5dc;
-    color: #000;
-    text-align: center;
-    padding: 15px 10px;
-    font-size: 14px;
+/* Navbar geral */
+nav.navbar {
+    min-height: 90px; /* Alterado de height para min-height */
+    overflow: visible; /* Alterado de hidden para visible */
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Ajuste quando o menu está expandido */
+.navbar-expand-lg .navbar-collapse.show {
     width: 100%;
-    z-index: 100;
+    flex-direction: column;
+    background-color: #f5f5dc;
+    padding: 10px 0;
 }
 
-.footer p {
-    margin: 5px 0;
+/* Ajuste dos itens do menu em telas menores */
+@media (max-width: 991px) {
+    .navbar-nav {
+        text-align: center;
+        width: 100%;
+    }
+    .nav-item {
+        margin: 10px 0;
+    }
+    .nav-link {
+        font-size: 1.5rem;
+    }
 }
 
+.navbar-brand {
+    height: 90px;
+    display: flex;
+    align-items: center;
+}
 
-/* Página index.html (NÃO APAGAR) */
+.navbar-brand img {
+    max-height: 200px;
+    /* tamanho máximo da logo no desktop */
+    width: auto;
+    object-fit: contain;
+    transition: max-height 0.3s ease;
+}
+
+/* Ajuste para que a logo não fique pequena demais nas telas menores */
+@media (max-width: 1200px) {
+    .navbar-brand img {
+        max-height: 160px;
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar-brand img {
+        max-height: 140px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-brand img {
+        max-height: 120px;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-brand img {
+        max-height: 100px;
+        /* em celulares, mantém a logo visível e não muito pequena */
+    }
+}
+
+.nav-link {
+    margin: 0 15px;
+    position: relative;
+    font-weight: 600 !important;
+    color: #000;
+    transition: color 0.3s ease;
+    letter-spacing: 0.05em;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -4px;
+    background-color: rgba(214, 124, 31, 0.5);
+    transition: width 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+    color: rgba(241, 165, 77, 1) !important;
+    /* Laranja mais claro no hover */
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Conteúdo principal */
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 .main-content {
-    flex: 1; 
+    flex: 1;
     display: flex;
     flex-direction: column;
 }
@@ -63,8 +167,10 @@ section.container-fluid {
     background: transparent !important;
 }
 
-
-.main-content, main, .content, .texto {
+.main-content,
+main,
+.content,
+.texto {
     text-align: left;
     padding: 40px;
     background: transparent !important;
@@ -76,39 +182,197 @@ section.container-fluid {
     margin-bottom: 20px;
 }
 
-.btn {
-  background: linear-gradient(to right, #f9a825, #f57c00);
-  color: white;
-  border: none;
-  border-radius: 30px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  transition: 0.3s ease;
-}
-
-.btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-}
-
 .texto p {
-    background: rgba(255, 165, 0, 0.5); /* laranja com transparência */
+    background: rgba(255, 165, 0, 0.5);
+    /* laranja com transparência */
     padding: 24px 28px;
     border-radius: 16px;
     color: #000;
     font-size: 1.1em;
     margin-top: 18px;
     margin-bottom: 18px;
-    box-shadow: 0 2px 12px 0 rgba(0,0,0,0.04);
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.04);
 }
 
-button:hover, .btn:hover, input[type="submit"]:hover {
+/* Botões */
+.btn,
+.btn-dashboard,
+.btn-dicas {
+    background: linear-gradient(to right, #f9a825, #f57c00);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: 0.3s ease;
+    cursor: pointer;
+    width: auto;
+    padding: 10px 20px;
+}
+
+.btn:hover,
+.btn-dashboard:hover,
+.btn-dicas:hover,
+button:hover,
+input[type="submit"]:hover {
     background-color: #ff9800;
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
 
+.btn-dicas {
+    margin-top: 20px;
+    width: 100%;
+}
 
+/* Cards */
+.weather-card {
+    width: 70%;
+    max-width: 600px;
+    margin: 100px auto 100px auto;
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.4);
+}
 
+.card i {
+    transition: transform 0.3s ease;
+}
 
-/* Página dicas.html (NÃO APAGAR) */
+.card:hover i {
+    transform: scale(1.1);
+}
+
+/* Ícone clima */
+.weather-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+}
+
+/* Footer */
+footer.footer,
+.footer {
+    width: 100%;
+    background-color: #f5f5dc;
+    color: #000;
+    text-align: center;
+    margin-top: auto;
+    padding: 15px 10px;
+    font-size: 14px;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    .weather-card {
+        max-width: 90%;
+        margin: 50px auto;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-brand img {
+        max-height: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 60px 15px;
+    }
+
+    header,
+    .header {
+        padding: 10px 10px 0 10px;
+    }
+
+    .logo {
+        height: 50px;
+        padding-left: 10px;
+    }
+
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .container .texto {
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .container .texto h2 {
+        font-size: 1em;
+    }
+
+    .container .texto h2 span {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 992px) {
+    section {
+        padding: 80px 30px;
+    }
+
+    header,
+    .header {
+        padding: 15px 20px 0 20px;
+    }
+
+    .logo {
+        height: 60px;
+        padding-left: 20px;
+    }
+
+    .container .texto {
+        max-width: 400px;
+    }
+
+    .container .texto h2 {
+        font-size: 1.2em;
+    }
+
+    .container .texto h2 span {
+        font-size: 1.5em;
+    }
+
+    .navbar-brand img {
+        max-height: 140px;
+    }
+}
+
+@media (max-width: 1200px) {
+
+    header,
+    .header {
+        padding: 20px 30px 0 30px;
+    }
+
+    .logo {
+        height: 70px;
+        padding-left: 30px;
+    }
+
+    .container .texto {
+        max-width: 500px;
+    }
+
+    .navbar-brand img {
+        max-height: 160px;
+    }
+}
+
+/* ===========================
+CSS da página dicas.html
+   =========================== */
+
 .card i {
     transition: transform 0.3s ease;
 }
@@ -118,82 +382,20 @@ button:hover, .btn:hover, input[type="submit"]:hover {
 }
 
 .btn-dashboard {
-  background: linear-gradient(to right, #f9a825, #f57c00);
-  color: white;
-  border: none;
-  border-radius: 30px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  transition: 0.3s ease;
+    background: linear-gradient(to right, #f9a825, #f57c00);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: 0.3s ease;
 }
 
 .btn-dashboard:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
 
-
-
-
-/* Responsividade para header, logo e textos principais */
-@media (max-width: 1200px) {
-    header {
-        padding: 20px 30px 0 30px;
-    }
-    .logo {
-        height: 70px;
-        padding-left: 30px;
-    }
-    .container .texto {
-        max-width: 500px;
-    }
-}
-
-@media (max-width: 992px) {
-    section {
-        padding: 80px 30px;
-    }
-    header {
-        padding: 15px 20px 0 20px;
-    }
-    .logo {
-        height: 60px;
-        padding-left: 20px;
-    }
-    .container .texto {
-        max-width: 400px;
-    }
-    .container .texto h2 {
-        font-size: 1.2em;
-    }
-    .container .texto h2 span {
-        font-size: 1.5em;
-    }
-}
-
-@media (max-width: 768px) {
-    section {
-        padding: 60px 15px;
-    }
-    header {
-        padding: 10px 10px 0 10px;
-    }
-    .logo {
-        height: 50px;
-        padding-left: 10px;
-    }
-    .container {
-        flex-direction: column;
-        text-align: center;
-    }
-    .container .texto {
-        max-width: 100%;
-        margin-right: 0;
-        margin-bottom: 30px;
-    }
-    .container .texto h2 {
-        font-size: 1em;
-    }
-    .container .texto h2 span {
-        font-size: 1.3em;
-    }
+footer.footer {
+    background-color: #f5f5dc !important;
+    color: #000
 }

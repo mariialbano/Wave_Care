@@ -5,79 +5,102 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Monitor de Temperatura</title>
-    <link rel="stylesheet" href="./css/dashboard.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 
 <body>
-    <header>
-        <a href="index.html"><img src="./assets/logo.png" alt="logo" class="logo" /></a>
-    </header>
-
-    <section class="weather-card">
-        <h3 class="mb-4 text-center">Monitor de Calor</h3>
-        <div class="mb-3">
-            <label for="estado" class="form-label">Selecione a Cidade:</label>
-            <select id="estado" class="form-select">
-                <option value="" disabled selected hidden>Selecione</option>
-                <option value="São Paulo">São Paulo</option>
-                <option value="Rio de Janeiro">Rio de Janeiro</option>
-                <option value="Belo Horizonte">Belo Horizonte</option>
-                <option value="Salvador">Salvador</option>
-                <option value="Fortaleza">Fortaleza</option>
-                <option value="Brasília">Brasília</option>
-                <option value="Curitiba">Curitiba</option>
-                <option value="Recife">Recife</option>
-                <option value="Porto Alegre">Porto Alegre</option>
-                <option value="Manaus">Manaus</option>
-            </select>
-        </div>
-
-        <div class="my-4 d-flex align-items-center justify-content-between">
-            <div class="d-flex align-items-center">
-                <img src="./assets/Icone Localização.png" alt="Localização" class="weather-icon" />
-                <span id="cidade" class="fs-5"></span>
-            </div>
-            <div>
-                <p class="mb-1 ms-3 fs-5 text-center">
-                    <span id="diaSemana"></span><br />
-                    <span id="diaMes"></span>
-                </p>
+    <nav class="navbar navbar-expand-lg" style="background-color: #f5f5dc;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./index.html">
+                <img src="./assets/logo.png" alt="logo" class="img-fluid" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active fs-4" aria-current="page" href="./index.html">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-4" href="./dashboard.html">Monitor de Temperatura</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-4" href="./dicas.html">Dicas</a>
+                    </li>
+                </ul>
             </div>
         </div>
+    </nav>
 
-        <div class="mb-3 d-flex flex-column align-items-center gap-1">
-            <div class="text-center">
-                <p class="fw-semibold mb-1"></p>
-                <p class="fs-1 lh-1 text-primary fw-bold mb-0" id="temperatura">--</p>
+    <div class="page-wrapper">
+        <section class="weather-card">
+            <h3 class="mb-4 text-center">Monitor de Calor</h3>
+            <div class="mb-3">
+                <label for="estado" class="form-label">Selecione a Cidade:</label>
+                <select id="estado" class="form-select">
+                    <option value="" disabled selected hidden>Selecione</option>
+                    <option value="São Paulo">São Paulo</option>
+                    <option value="Rio de Janeiro">Rio de Janeiro</option>
+                    <option value="Belo Horizonte">Belo Horizonte</option>
+                    <option value="Salvador">Salvador</option>
+                    <option value="Fortaleza">Fortaleza</option>
+                    <option value="Brasília">Brasília</option>
+                    <option value="Curitiba">Curitiba</option>
+                    <option value="Recife">Recife</option>
+                    <option value="Porto Alegre">Porto Alegre</option>
+                    <option value="Manaus">Manaus</option>
+                </select>
             </div>
 
-            <div class="text-center">
-                <p class="fw-semibold mb-0"></p>
-                <p class="fs-4 lh-1 text-secondary fw-semibold mb-0" id="condicao">--</p>
+            <div class="my-4 d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center">
+                    <img src="./assets/Icone Localização.png" alt="Localização" class="weather-icon" />
+                    <span id="cidade" class="fs-4"></span>
+                </div>
+                <div>
+                    <p class="mb-1 ms-3 fs-4 text-center">
+                        <span id="diaSemana"></span><br />
+                        <span id="diaMes"></span>
+                    </p>
+                </div>
             </div>
 
-            <div class="text-center mt-3">
-                <p class="fw-semibold mb-1">Sensação</p>
-                <p class="fs-2 lh-1 text-warning fw-semibold" id="sensacao">--</p>
+            <div class="mb-3 d-flex flex-column align-items-center gap-1">
+                <div class="text-center">
+                    <p class="fw-semibold mb-1"></p>
+                    <p class="fs-1 lh-1 text-primary fw-bold mb-0" id="temperatura">--</p>
+                </div>
+
+                <div class="text-center">
+                    <p class="fw-semibold mb-0"></p>
+                    <p class="fs-3 lh-1 text-secondary fw-semibold mb-0" id="condicao">--</p>
+                </div>
+
+                <div class="text-center mt-3">
+                    <p class="fw-semibold mb-1">Sensação</p>
+                    <p class="fs-1 lh-1 text-warning fw-semibold" id="sensacao">--</p>
+                </div>
             </div>
-        </div>
 
-        <div id="alerta" class="alert d-flex justify-content-center" role="alert" style="display: none;"></div>
+            <div id="alerta" class="alert d-flex justify-content-center" role="alert" style="display: none;"></div>
 
-        <p class="text-center fst-italic">Cuide-se! Sua saúde vem em primeiro lugar.</p>
+            <p class="text-center fst-italic">Cuide-se! Sua saúde vem em primeiro lugar.</p>
 
-        <a href="dicas.html" class="btn btn-dicas w-100 btn-warning">Dicas</a>
-    </section>
+            <a href="dicas.html" class="btn btn-dicas w-100 btn-warning">Dicas</a>
+        </section>
 
-    <!-- Footer -->
-    <footer class="footer text-black text-center">
-        <p>© 2025 Wave Care. Todos os direitos reservados.</p>
-        <p>Desenvolvido por: Ana Gonçalves, Jessica Brito, Mariana Albano, Neemias Silva, Vinícius Gonzales.</p>
-    </footer>
+        <!-- Footer -->
+        <footer class="footer text-black text-center">
+            <p>© 2025 Wave Care. Todos os direitos reservados.</p>
+            <p>Desenvolvido por: Ana Gonçalves, Jessica Brito, Mariana Albano, Neemias Silva, Vinícius Gonzales.</p>
+        </footer>
+</body>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src='./js/app.js'></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src='./js/app.js'></script>
 </body>
 
 </html>

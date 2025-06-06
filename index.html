@@ -1,47 +1,76 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Wave Care</title>
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
 </head>
+
 <body>
-    <header class="header">
-            <a href="index.html">
-                <img src="./assets/logo.png" alt="logo" class="logo" />
+    <nav class="navbar navbar-expand-lg" style="background-color: #f5f5dc;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./index.html">
+                <img src="./assets/logo.png" alt="logo" class="img-fluid" />
             </a>
-    </header>
-    
-    <div class="main-content">
-        <section class="container-fluid mt-5 pt-5 bg-white">
-            <div class="circle"></div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active fs-4" aria-current="page" href="./index.html">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-4" href="./dashboard.html">Monitor de Temperatura</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-4" href="./dicas.html">Dicas</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-wrapper">
+        <div class="main-content">
+            <section class="container-fluid mt-5 pt-5 bg-white">
+                <div class="circle"></div>
                 <div class="container">
                     <div class="texto">
                         <h2>Wave Care</h2>
                         <h6>Seu bem-estar na temperatura certa.</h6>
-                        <p>O Wave Care é uma aplicação web desenvolvida para ajudar você a se proteger durante ondas de calor. Através da cidade e da idade informadas, o sistema gera alertas personalizados e recomendações de saúde específicas para seu perfil. <br>
-                            Nosso objetivo é oferecer informações confiáveis, práticas e direcionadas para que você possa tomar decisões seguras em dias de calor extremo. <br>
-                            Com o Wave Care, você recebe orientações importantes para manter sua saúde em dia, como níveis de risco, hidratação ideal, cuidados com exposição solar e muito mais tudo baseado em dados climáticos atualizados e nas necessidades da sua faixa etária. <br>
-                            Cuidar da sua saúde nunca foi tão simples. </p>
+                        <p>O Wave Care é uma aplicação web desenvolvida para ajudar você a se proteger durante ondas de
+                            calor. Através da cidade e da idade informadas, o sistema gera alertas personalizados e
+                            recomendações de saúde específicas para seu perfil. <br />
+                            Nosso objetivo é oferecer informações confiáveis, práticas e direcionadas para que você
+                            possa tomar decisões seguras em dias de calor extremo. <br />
+                            Com o Wave Care, você recebe orientações importantes para manter sua saúde em dia, como
+                            níveis de risco, hidratação ideal, cuidados com exposição solar e muito mais tudo baseado em
+                            dados climáticos atualizados e nas necessidades da sua faixa etária. <br />
+                            Cuidar da sua saúde nunca foi tão simples.
+                        </p>
                         <!-- "Saiba mais" button -->
                         <a href="dashboard.html" class="btn">Ir para Dashboard</a>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer text-black text-center">
+            <p>© 2025 Wave Care. Todos os direitos reservados.</p>
+            <p>Desenvolvido por: Ana Gonçalves, Jessica Brito, Mariana Albano, Neemias Silva, Vinícius Gonzales.</p>
+        </footer>
     </div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Footer -->
-    <footer class="footer text-black text-center">
-        <p>© 2025 Wave Care. Todos os direitos reservados.</p>
-        <p>Desenvolvido por: Ana Gonçalves, Jessica Brito, Mariana Albano, Neemias Silva, Vinícius Gonzales.</p>
-    </footer>
 </body>
+
 </html>
